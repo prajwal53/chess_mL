@@ -18,11 +18,18 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from filehandler.views import upload_file
 
 
 urlpatterns = [
+    #path('admin/', admin.site.urls),
+    #path('', include('filehandler.urls')),
+    #path('upload/', include('filehandler.urls')),
+
     path('admin/', admin.site.urls),
-    path('filehandler/', include('filehandler.urls')),
+    path('', upload_file, name='upload_root'),  # Mapping root URL to the upload view
+    path('upload/', upload_file, name='upload'),  # Mapping /upload/ URL to the upload view
+    path('', include('filehandler.urls')),
 ]
 
 if settings.DEBUG:
