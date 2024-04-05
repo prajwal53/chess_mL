@@ -46,8 +46,7 @@ def analyze_pgn_and_get_results(pgn_file, player_to_analyze):
         total_moves = 0
         total_cpl = 0
 
-        engine = chess.engine.SimpleEngine.popen_uci("C:/Users/PRAJWAL/Downloads/stockfish-windows-x86-64/stockfish/stockfish-windows-x86-64.exe",timeout=30)
-
+        engine = chess.engine.SimpleEngine.popen_uci("E:\chess_final\stockfish-windows-x86-64\stockfish\stockfish-windows-x86-64.exe",timeout=30)
         board = game.board()
         for move in game.mainline_moves():
             board.push(move)
